@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
 import './App.css';
+import Greet from './Greet'
+
+import JSXRules  from './JSXRules';
 import MovieCard from './MovieCard'; // Corrected case
 import SearchIcon from './search.svg';
 
@@ -20,6 +23,8 @@ const App = () => {
   }, []);
 
   return (
+
+  
     <div className="app">
       <h1>Ujwal Shrestha Movie</h1>
       <div className="search">
@@ -34,6 +39,8 @@ const App = () => {
           onClick={() => searchMovies(searchTerm)}
         />
       </div>
+          <JSXRules />
+          <Greet />
       {movies?.length > 0 ? (
         <div className="container">
           {movies.map((movie) => (
@@ -43,12 +50,16 @@ const App = () => {
       ) : (
         <div className="empty">
           <h2>No movies found</h2>
+          
         </div>
+        
       )}
     </div>
-  );
-};
 
+    
+  );
+  
+};
 export default App;
 
 {/*
